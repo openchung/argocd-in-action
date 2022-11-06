@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: argocd-in-action
+build:
+  artifacts:
+  - image: dannielchung/flask-demo
+    context: flask-demo
+    docker: {}
+deploy:
+  kustomize:
+    paths:
+    - kustomize
